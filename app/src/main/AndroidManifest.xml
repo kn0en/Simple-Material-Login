@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mi2a.kuisyudha">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/launcher"
+        android:fullBackupContent="true">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Dark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+
+        <activity android:name=".MinumActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Menu Minuman"
+            android:theme="@style/AppTheme.Label">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".MakanActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Menu Makanan"
+            android:theme="@style/AppTheme.Label">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+    </application>
+
+</manifest>
