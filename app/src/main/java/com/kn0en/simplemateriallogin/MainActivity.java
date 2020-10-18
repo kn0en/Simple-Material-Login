@@ -8,16 +8,14 @@ import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
-        private Button btn_makan;
-        private Button btn_minum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_makan = findViewById(R.id.btn_makan);
-        btn_minum = findViewById(R.id.btn_minum);
+        Button btn_makan = findViewById(R.id.btn_makan);
+        Button btn_minum = findViewById(R.id.btn_minum);
 
         btn_makan.setOnClickListener(new View.OnClickListener() {
             @Override

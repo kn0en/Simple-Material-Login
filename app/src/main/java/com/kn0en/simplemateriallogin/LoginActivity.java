@@ -66,10 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
-
-        // TODO: Implement your own authentication logic here.
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -85,10 +81,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == RESULT_OK) {
 
-                // TODO: Implement successful signup logic here
                 // By default we just finish the Activity and log them in automatically
                 this.finish();
             }
@@ -116,16 +112,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public boolean validate() {
-        boolean valid = true;
+        boolean valid;
 
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (_emailText.getText().toString().equals("pratama.oktavian66@gmail.com") && (_passwordText.getText().toString().equals("user"))){
-                valid = true;
-        }else{
-                valid = false;
-        }
+        valid = _emailText.getText().toString().equals("pratama.oktavian66@gmail.com") && (_passwordText.getText().toString().equals("user"));
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             _emailText.setError("enter a valid email address");

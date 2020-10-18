@@ -45,7 +45,7 @@ public class MyAdapterMakan extends RecyclerView.Adapter<MyAdapterMakan.ViewHold
         return makanModel.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView namaMakann, hargaMakann;
         ImageView imageMakann;

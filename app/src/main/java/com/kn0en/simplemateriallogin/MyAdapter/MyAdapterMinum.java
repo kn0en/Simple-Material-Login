@@ -45,7 +45,7 @@ public class MyAdapterMinum extends RecyclerView.Adapter<MyAdapterMinum.ViewHold
         return minumModel.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView namaMinumm, hargaMinumm;
         ImageView imageMinumm;

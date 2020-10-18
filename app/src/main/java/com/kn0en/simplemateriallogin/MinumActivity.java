@@ -12,9 +12,6 @@ import com.kn0en.simplemateriallogin.MyModel.MinumModel;
 import java.util.ArrayList;
 
 public class MinumActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private ArrayList<MinumModel> minumModel;
-    private MyAdapterMinum minumAdapter;
 
     private int[] imageMinumList = new int[]{R.drawable.drink1,R.drawable.drink2,R.drawable.drink3,R.drawable.drink4,R.drawable.drink5,R.drawable.drink6,R.drawable.drink7,R.drawable.drink8,R.drawable.drink9,R.drawable.drink10};
     private String[] namaMinumList = new String[]{"Beef with Fried Potato","Waffle with Strawberry sauce","Crips with Mustard sauce","Chicken katsu rice","Noodle Beef sauce karage","Beef burger with Mozzarella","Beef burger with scrumble egg","Fluffy Bread sweet","Papperoni Pizza","Beef Pizza"};
@@ -25,10 +22,10 @@ public class MinumActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minum);
 
-        recyclerView = findViewById(R.id.minum_layout);
+        RecyclerView recyclerView = findViewById(R.id.minum_layout);
 
-        minumModel = minumlist();
-        minumAdapter = new MyAdapterMinum(this, minumModel);
+        ArrayList<MinumModel> minumModel = minumlist();
+        MyAdapterMinum minumAdapter = new MyAdapterMinum(this, minumModel);
         recyclerView.setAdapter(minumAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
     }

@@ -13,10 +13,6 @@ import java.util.ArrayList;
 
 public class MakanActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private ArrayList<MakanModel> makanModel;
-    private MyAdapterMakan makanAdapter;
-
     private int[] imageMakanList = new int[]{R.drawable.food1,R.drawable.food2,R.drawable.food3,R.drawable.food4,R.drawable.food5,R.drawable.food6,R.drawable.food7,R.drawable.food8,R.drawable.food9,R.drawable.food10};
     private String[] namaMakanList = new String[]{"Beef with Fried Potato","Waffle with Strawberry sauce","Crips with Mustard sauce","Chicken katsu rice","Noodle Beef sauce karage","Beef burger with Mozzarella","Beef burger with scrumble egg","Fluffy Bread sweet","Papperoni Pizza","Beef Pizza"};
     private String[] hargaMakanList = new String[]{"Rp.15000","Rp.20000","Rp.17500","Rp.14500","Rp.17500","Rp.15000","Rp.20000","Rp.12000","Rp.25000","Rp.30000"};
@@ -26,10 +22,10 @@ public class MakanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_makan);
 
-        recyclerView = findViewById(R.id.makan_layout);
+        RecyclerView recyclerView = findViewById(R.id.makan_layout);
 
-        makanModel = makanlist();
-        makanAdapter = new MyAdapterMakan(this, makanModel);
+        ArrayList<MakanModel> makanModel = makanlist();
+        MyAdapterMakan makanAdapter = new MyAdapterMakan(this, makanModel);
         recyclerView.setAdapter(makanAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
     }
